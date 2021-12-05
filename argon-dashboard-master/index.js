@@ -18,6 +18,7 @@ var unitPrice;
 var consumerType;
 var unitsConsumed;
 var amountDue;
+var dataMonth = new Array();
 // }
 function randomNumber(min, max) { 
     min = Math.ceil(min);
@@ -80,14 +81,11 @@ function amountDuef(){
     return amountDue;
 }
 
-function dataMonth(){
-    var dataMonth = new Array();
-    for (let i = 0; i < 7; i++) {
+function dataMonthf(){
+    for (let i = 0; i < 11; i++) {
         dataMonth[i] = unitsConsumedf();
 
         
     }
-    dataMonth[7] = unitsConsumed;
     return dataMonth;
-
 }
