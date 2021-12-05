@@ -36,8 +36,9 @@ function phase() {
 } 
 
 function unitPrice(){
+    var unitPrice=1;
     if (phase==1){
-        uniPrice = 1;
+        unitPrice = 1;
 
     }
     else unitPrice = 1.25;
