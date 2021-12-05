@@ -13,7 +13,11 @@
 //     var amountDue = unitPrice * Units 
 
 
-
+var phase;
+var unitPrice;
+var consumerType;
+var unitsConsumed;
+var amountDue;
 // }
 function randomNumber(min, max) { 
     min = Math.ceil(min);
@@ -21,8 +25,8 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function phase() { 
-    var phase = 1;
+function phasef() { 
+     phase = 1;
     if(consumerType== 2 || consumerType==3){
         return 3;
     }
@@ -35,9 +39,10 @@ function phase() {
     return phase ;
 } 
 
-function unitPrice(){
-    var unitPrice=1;
-    if (phase==1){
+function unitPricef(){
+    phase = phasef();
+    
+    if (phase == 1 ){
         unitPrice = 1;
 
     }
@@ -47,10 +52,10 @@ function unitPrice(){
 
 
 }
-function consumerType() { // consumer type 1. residential 2.commercial 3. industrial
+function consumerTypef() { // consumer type 1. residential 2.commercial 3. industrial
     min = Math.ceil(1);
     max = Math.floor(3); 
-    var consumerType =  Math.floor(Math.random() * (max - min + 1)) + min;
+    consumerType =  Math.floor(Math.random() * (max - min + 1)) + min;
     if (consumerType== 1){
         return "Residential"
     }else if (consumerType == 2){
@@ -58,27 +63,27 @@ function consumerType() { // consumer type 1. residential 2.commercial 3. indust
     }else return "Industrial";
 }
 
-function unitsConsumed(){
+function unitsConsumedf(){
 
     if (consumerType== 1){
-        var unitsConsumed=randomNumber(700,900);
+        unitsConsumed=randomNumber(700,900);
     }
     else if (consumerType==2){
-        var unitsConsumed= randomNumber(800,1000);        
+        unitsConsumed= randomNumber(800,1000);        
     }
     else unitsConsumed = randomNumber(1200,3000);
     return unitsConsumed;
 }
 
-function amountDue(){
-    amountDue = unitsConsumed * unitsConsumed;
+function amountDuef(){
+    amountDue = unitsConsumed * unitPrice;
     return amountDue;
 }
 
 function dataMonth(){
     var dataMonth = new Array();
     for (let i = 0; i < 7; i++) {
-        dataMonth[i] = unitsConsumed();
+        dataMonth[i] = unitsConsumedf();
 
         
     }
