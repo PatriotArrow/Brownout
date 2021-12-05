@@ -74,3 +74,14 @@ function amountDue(){
     return amountDue;
 }
 
+function dataMonth(){
+    var dataMonth = new Array();
+    for (let i = 0; i < 7; i++) {
+        dataMonth[i] = unitsConsumed();
+
+        
+    }
+    dataMonth[7] = unitsConsumed;
+    return dataMonth;
+
+}
