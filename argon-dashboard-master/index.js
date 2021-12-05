@@ -3,26 +3,21 @@
 //section (01 - 99)
 //phase = (1- 2)
 // total consumption , payable amount
-var cusID;
-function unitsConsumed(){ //in KWh 
+// var cusID;
+// function unitsConsumed(){ //in KWh 
 
-    return (714 * .5 * Math.random());
+//     return (714 * .5 * Math.random());
 
-}
-function amountDue(){
-    var unitPrice = 1;
-    if (phase == 2){
-        unitPrice = 1;
-    }else if (phase == 2){
-        unitPrice = 2;
-    }
+// }
+// function amountDue(){
+//     var amountDue = unitPrice * Units 
 
 
 
-}
+// }
 
 
-function randomNumber() { 
+function phase() { 
     var phase = 1;
     min = Math.ceil(1);
     max = Math.floor(3);
@@ -34,9 +29,18 @@ function randomNumber() {
 } 
 
 function unitPrice(){
-    if (phase==1){}
+    if (phase==1){
+        uniPrice = 1;
+
+    }
+    else unitPrice = 1.25;
+    return unitPrice;
 
 
 
 }
-
+function m(min, max) { 
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+} 
