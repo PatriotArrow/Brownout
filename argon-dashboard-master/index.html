@@ -578,8 +578,8 @@ new Chart("myChart", {
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                  <h5 class="h3 mb-0">Total orders</h5>
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">Avg Consumption (kWh)</h6>
+                  <h5 class="h3 mb-0">Hourly</h5>
                 </div>
               </div>
             </div>
@@ -587,6 +587,40 @@ new Chart("myChart", {
               <!-- Chart -->
               <div class="chart">
                 <!-- <canvas id="chart-bars" class="chart-canvas"></canvas> -->
+                <!-- <canvas id="chart-bars" class="chart-canvas"></canvas> -->
+                <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["12 AM", "2 AM", "4 AM", "6 AM", "8 AM","10 AM","12 PM","2 PM","4 PM","6 PM","8 PM","10 PM"];
+// var yValues = [55, 49, 44, 24, 15,23,21,22,11,1,2,34];
+var yValues = dataHourf();
+var barColors = ["#f28d00", "#f28d00","#f28d00","#f28d00","#f28d00","#f28d00","#f28d00","#f28d00","#f28d00","#f28d00","#f28d00","#f28d00"];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Power Consumption Variation (hourly)"
+    }
+  }
+});
+
+</script>
+<span id ="peakHour"> 
+  
+  <script type="text/javascript"> let blahblah = "Peak Hour : ";document.getElementById("peakHour").innerHTML = blahblah.concat(peakHourf());
+</script></span>
+
+
               </div>
             </div>
           </div>

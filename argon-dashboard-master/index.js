@@ -19,6 +19,10 @@ var consumerType;
 var unitsConsumed;
 var amountDue;
 var dataMonth = new Array();
+var hour = new Array();
+var peakHour;
+var peak_max;
+var hourName = ["12 AM", "2 AM", "4 AM", "6 AM", "8 AM","10 AM","12 PM","2 PM","4 PM","6 PM","8 PM","10 PM"] ;
 // }
 function randomNumber(min, max) { 
     min = Math.ceil(min);
@@ -88,4 +92,34 @@ function dataMonthf(){
         
     }
     return dataMonth;
+}
+function dataHourf(){
+    for (let i = 0; i < 12; i++) {
+        hour[i] = randomNumber(4, 9);
+
+        
+    }
+    // peakHour = Math.max(hour);
+    return hour;
+}
+
+function peakHourf(){
+    peak_max = hour[0];
+    for (let index = 0; index < 12; index++) {
+        if (peak_max < hour[index]){
+            peak_max = hour[index];
+        }
+        
+        
+    }
+    for (let index = 0; index < 12; index++) {
+        if (peak_max == hour[index]){
+            return hourName[index];
+        }
+        
+        
+    }
+    
+    
+    
 }
